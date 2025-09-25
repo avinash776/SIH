@@ -27,17 +27,32 @@ interface FloatingWord {
 }
 
 export default function FloatingWords() {
-  const floatingWords: FloatingWord[] = multilingualWords.map((word, index) => ({
+  // Further reduce to just 3 words for optimal performance
+  const reducedWords = multilingualWords.slice(0, 3); // Only use first 3 words
+  const floatingWords: FloatingWord[] = reducedWords.map((word, index) => ({
     id: index,
     word,
-    x: Math.random() * 100,
-    y: Math.random() * 100,
-    duration: 8 + Math.random() * 4,
-    delay: Math.random() * 2,
+    x: 15 + (index * 25), // More spaced out positions
+    y: 15 + (index * 20),
+    duration: 20, // Slower movement for smoother performance
+    delay: index * 1, // Longer delays
   }));
 
   return (
     <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
+      {/* Beautiful background decorations */}
+      <div className="absolute inset-0">
+        {/* Subtle gradient overlays */}
+        <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-br from-blue-200/30 to-purple-300/30 rounded-full blur-xl"></div>
+        <div className="absolute bottom-32 right-32 w-40 h-40 bg-gradient-to-br from-pink-200/20 to-orange-300/20 rounded-full blur-2xl"></div>
+        <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-gradient-to-br from-green-200/25 to-blue-300/25 rounded-full blur-lg"></div>
+        
+        {/* Static decorative elements */}
+        <div className="absolute top-1/6 right-1/5 text-xl opacity-20">🌟</div>
+        <div className="absolute bottom-1/4 left-1/6 text-2xl opacity-15">✨</div>
+        <div className="absolute top-2/3 right-1/3 text-lg opacity-25">💫</div>
+      </div>
+      
       {floatingWords.map((item) => (
         <motion.div
           key={item.id}
@@ -50,25 +65,17 @@ export default function FloatingWords() {
             filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.3))',
           }}
           animate={{
-            y: [-30, 30, -30],
-            x: [-10, 10, -10],
-            opacity: [0.1, 0.3, 0.1],
-            scale: [0.8, 1.2, 0.8],
-            rotate: [-5, 5, -5],
+            y: [-10, 10, -10],
+            opacity: [0.3, 0.5, 0.3],
           }}
           transition={{
             duration: item.duration,
             delay: item.delay,
             repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-          whileHover={{
-            scale: 1.5,
-            opacity: 0.8,
-            transition: { duration: 0.3 },
+            ease: 'linear',
           }}
         >
-          <span className="inline-block animate-bounce-gentle mr-2">
+          <span className="inline-block mr-2">
             {item.word.emoji}
           </span>
           <span className="multilingual-text font-extrabold">
@@ -77,30 +84,10 @@ export default function FloatingWords() {
         </motion.div>
       ))}
       
-      {/* Sparkle effects */}
-      {Array.from({length: 15}).map((_, i) => (
-        <motion.div
-          key={`sparkle-${i}`}
-          className="absolute text-2xl select-none"
-          style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-          }}
-          animate={{
-            scale: [0, 1, 0],
-            rotate: [0, 180, 360],
-            opacity: [0, 0.6, 0],
-          }}
-          transition={{
-            duration: 3,
-            delay: Math.random() * 2,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-        >
-          {Math.random() > 0.5 ? '✨' : '🌟'}
-        </motion.div>
-      ))}
+      {/* Simplified sparkle effects - just 3 static sparkles */}
+      <div className="absolute text-2xl select-none opacity-30" style={{ left: '20%', top: '30%' }}>✨</div>
+      <div className="absolute text-2xl select-none opacity-30" style={{ left: '70%', top: '60%' }}>🌟</div>
+      <div className="absolute text-2xl select-none opacity-30" style={{ left: '50%', top: '80%' }}>✨</div>
     </div>
   );
 }

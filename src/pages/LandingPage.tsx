@@ -1,15 +1,14 @@
 import { ArrowRightIcon, PlayIcon } from '@heroicons/react/24/outline';
 import {
-    BoltIcon,
-    BookOpenIcon,
-    ClipboardDocumentCheckIcon,
-    DocumentTextIcon,
-    GlobeAltIcon,
-    SpeakerWaveIcon
+  BoltIcon,
+  BookOpenIcon,
+  ClipboardDocumentCheckIcon,
+  DocumentTextIcon,
+  GlobeAltIcon,
+  SpeakerWaveIcon
 } from '@heroicons/react/24/solid';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import FloatingWords from '../components/animations/FloatingWords';
 
 export default function LandingPage() {
   const navigate = useNavigate();
@@ -57,170 +56,106 @@ export default function LandingPage() {
 
   return (
     <div className="min-h-screen">
-      <FloatingWords />
       
       {/* Hero Section */}
       <section className="relative pt-20 pb-24 overflow-hidden min-h-screen flex items-center">
         <div className="absolute inset-0 bg-gradient-to-br from-white/95 via-blue-50/90 to-purple-50/95"></div>
         
-        {/* Animated geometric shapes */}
+        {/* Beautiful background graphics - static for performance */}
         <div className="absolute inset-0">
-          {Array.from({length: 8}).map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute rounded-full"
-              style={{
-                background: `linear-gradient(45deg, ${['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#ffeaa7', '#fd79a8', '#a29bfe', '#fdcb6e'][i]}, transparent)`,
-                width: `${50 + i * 20}px`,
-                height: `${50 + i * 20}px`,
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-              }}
-              animate={{
-                x: [0, 100, 0],
-                y: [0, -100, 0],
-                scale: [1, 1.2, 1],
-                opacity: [0.1, 0.3, 0.1],
-              }}
-              transition={{
-                duration: 10 + i * 2,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: i * 0.5,
-              }}
-            />
-          ))}
+          {/* Gradient circles */}
+          <div className="absolute rounded-full opacity-20 bg-gradient-to-br from-blue-400 to-purple-500 w-40 h-40 left-1/6 top-1/5 blur-sm"></div>
+          <div className="absolute rounded-full opacity-15 bg-gradient-to-br from-green-400 to-blue-500 w-32 h-32 right-1/5 top-1/4 blur-sm"></div>
+          <div className="absolute rounded-full opacity-25 bg-gradient-to-br from-purple-400 to-pink-500 w-24 h-24 left-1/3 bottom-1/3 blur-sm"></div>
+          <div className="absolute rounded-full opacity-18 bg-gradient-to-br from-orange-400 to-red-500 w-36 h-36 right-1/4 bottom-1/4 blur-sm"></div>
+          
+          {/* Geometric shapes */}
+          <div className="absolute w-20 h-20 bg-gradient-to-br from-cyan-300 to-blue-400 opacity-10 rotate-45 left-3/4 top-1/6"></div>
+          <div className="absolute w-16 h-16 bg-gradient-to-br from-pink-300 to-purple-400 opacity-15 rotate-12 left-1/5 bottom-1/5"></div>
+          
+          {/* Decorative dots pattern */}
+          <div className="absolute right-1/6 top-1/3">
+            <div className="grid grid-cols-3 gap-2 opacity-20">
+              {[...Array(9)].map((_, i) => (
+                <div key={i} className="w-2 h-2 bg-blue-400 rounded-full"></div>
+              ))}
+            </div>
+          </div>
+          
+          {/* Subtle lines */}
+          <div className="absolute left-1/4 top-1/2 w-24 h-0.5 bg-gradient-to-r from-transparent via-purple-300 to-transparent opacity-30 rotate-45"></div>
+          <div className="absolute right-1/3 bottom-1/3 w-20 h-0.5 bg-gradient-to-r from-transparent via-blue-300 to-transparent opacity-25 -rotate-45"></div>
         </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1.2 }}
-              className="mb-8"
-            >
-              <span className="text-6xl md:text-8xl animate-bounce-gentle">🌍</span>
-            </motion.div>
+            <div className="mb-8">
+              <span className="text-6xl md:text-8xl">🌍</span>
+            </div>
             
-            <motion.h1
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.3 }}
-              className="text-5xl md:text-7xl lg:text-8xl font-extrabold font-heading text-gray-900 mb-8 relative"
-            >
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold font-heading text-gray-900 mb-8 relative">
               <span className="inline-block">Learn Any</span>{' '}
               <span className="inline-block relative">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-vibrant-pink via-vibrant-yellow to-vibrant-orange animate-gradient-move glow-text">
+                <span className="text-blue-600 font-bold">
                   Skill
                 </span>
-                <motion.span 
-                  className="absolute -top-4 -right-4 text-4xl"
-                  animate={{ rotate: [0, 360] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                >
-                  ⚡
-                </motion.span>
+                <span className="absolute -top-2 -right-2 text-2xl">⚡</span>
               </span>
               <br />
               <span className="inline-block">In Any</span>{' '}
               <span className="inline-block relative">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-vibrant-green via-accent-400 to-secondary-400 animate-gradient-move glow-text">
+                <span className="text-green-600 font-bold">
                   Language
                 </span>
-                <motion.span 
-                  className="absolute -top-4 -right-4 text-4xl"
-                  animate={{ 
-                    scale: [1, 1.3, 1],
-                    rotate: [0, 10, -10, 0] 
-                  }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                >
-                  🌟
-                </motion.span>
+                <span className="absolute -top-2 -right-2 text-2xl">🌟</span>
               </span>
-            </motion.h1>
+            </h1>
             
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-2xl md:text-3xl text-gray-700 mb-12 max-w-4xl mx-auto font-medium leading-relaxed"
-            >
+            <p className="text-2xl md:text-3xl text-gray-700 mb-12 max-w-4xl mx-auto font-medium leading-relaxed">
               <span className="inline-block mr-2">🚀</span>
               AI-powered multilingual content localization for vocational training
               <span className="inline-block mx-2">•</span>
-              <span className="text-vibrant-yellow">Breaking barriers</span>
+              <span className="text-orange-600 font-semibold">Breaking barriers</span>
               <span className="inline-block mx-2">•</span>
-              <span className="text-vibrant-green">Building futures</span>
+              <span className="text-green-600 font-semibold">Building futures</span>
               <span className="inline-block ml-2">🎯</span>
-            </motion.p>
+            </p>
             
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.9 }}
-              className="flex flex-col sm:flex-row gap-6 justify-center items-center"
-            >
-              <motion.button
-                whileHover={{ 
-                  scale: 1.1, 
-                  boxShadow: "0 20px 40px rgba(255,107,107,0.4)" 
-                }}
-                whileTap={{ scale: 0.95 }}
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <button
                 onClick={() => navigate('/learn')}
-                className="relative overflow-hidden bg-gradient-to-r from-blue-600 to-purple-600 text-white text-xl px-10 py-5 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white text-xl px-10 py-5 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 group cursor-pointer"
               >
-                <span className="relative z-10 flex items-center space-x-3">
-                  <span className="text-2xl group-hover:animate-bounce">🎓</span>
+                <span className="flex items-center space-x-3">
+                  <span className="text-2xl">🎓</span>
                   <span className="font-bold">Get Started</span>
-                  <ArrowRightIcon className="h-6 w-6 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRightIcon className="h-6 w-6" />
                 </span>
-              </motion.button>
+              </button>
               
-              <motion.button
-                whileHover={{ 
-                  scale: 1.1,
-                  boxShadow: "0 20px 40px rgba(78,205,196,0.4)"
-                }}
-                whileTap={{ scale: 0.95 }}
+              <button
                 onClick={() => navigate('/admin')}
-                className="relative overflow-hidden bg-white/90 backdrop-blur-lg text-gray-800 text-xl px-10 py-5 rounded-2xl border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer"
+                className="bg-white/90 backdrop-blur-lg text-gray-800 text-xl px-10 py-5 rounded-2xl border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-200 group cursor-pointer"
               >
-                <span className="relative z-10 flex items-center space-x-3">
-                  <span className="text-2xl group-hover:animate-spin">🎬</span>
+                <span className="flex items-center space-x-3">
+                  <span className="text-2xl">🎬</span>
                   <span className="font-bold">Admin Panel</span>
-                  <PlayIcon className="h-6 w-6 group-hover:scale-110 transition-transform" />
+                  <PlayIcon className="h-6 w-6" />
                 </span>
-              </motion.button>
-            </motion.div>
+              </button>
+            </div>
             
             {/* Language badges */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.2 }}
-              className="mt-16 flex flex-wrap justify-center gap-4"
-            >
-              {['🇮🇳 हिंदी', '🇧🇩 বাংলা', '🇮🇳 తెలుగు', '🇮🇳 தமிழ்', '🇮🇳 ಕನ್ನಡ', '🇵🇰 اردو'].map((lang, i) => (
-                <motion.span
+            <div className="mt-16 flex flex-wrap justify-center gap-4">
+              {['🇮🇳 हिंदी', '🇧🇩 বাংলা', '🇮🇳 తెలుగు', '🇮🇳 தமிழ்', '🇮🇳 ಕನ್ನಡ', '🇵🇰 اردو'].map((lang) => (
+                <span
                   key={lang}
-                  className="bg-white/80 backdrop-blur-lg px-4 py-2 rounded-full text-gray-800 font-medium text-lg border border-gray-200 shadow-md"
-                  whileHover={{ scale: 1.1, y: -5 }}
-                  animate={{ 
-                    y: [0, -5, 0],
-                    opacity: [0.7, 1, 0.7]
-                  }}
-                  transition={{ 
-                    duration: 2,
-                    delay: i * 0.2,
-                    repeat: Infinity 
-                  }}
+                  className="bg-white/80 backdrop-blur-lg px-4 py-2 rounded-full text-gray-800 font-medium text-lg border border-gray-200 shadow-md hover:scale-105 transition-transform duration-200"
                 >
                   {lang}
-                </motion.span>
+                </span>
               ))}
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -228,31 +163,18 @@ export default function LandingPage() {
       {/* Dashboard Preview Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               🚀 Powerful Dashboard at Your Fingertips
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Experience our intuitive interface designed for creators, learners, and administrators
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             {/* Admin Card */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              whileHover={{ y: -10, scale: 1.02 }}
-              className="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-blue-200"
-            >
+            <div className="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-shadow duration-200 border border-blue-200">
               <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6 mx-auto">
                 <span className="text-3xl">⚙️</span>
               </div>
@@ -263,25 +185,16 @@ export default function LandingPage() {
                 <li className="flex items-center"><span className="mr-3">👥</span> User Management</li>
                 <li className="flex items-center"><span className="mr-3">🌐</span> Multi-language Control</li>
               </ul>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+              <button
                 onClick={() => navigate('/admin')}
-                className="w-full mt-6 bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300"
+                className="w-full mt-6 bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-200"
               >
                 Explore Admin 🚀
-              </motion.button>
-            </motion.div>
+              </button>
+            </div>
 
             {/* Learner Card */}
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              whileHover={{ y: -10, scale: 1.02 }}
-              className="bg-gradient-to-br from-green-50 to-emerald-100 p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-green-200"
-            >
+            <div className="bg-gradient-to-br from-green-50 to-emerald-100 p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-shadow duration-200 border border-green-200">
               <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 mx-auto">
                 <span className="text-3xl">🎓</span>
               </div>
@@ -292,25 +205,16 @@ export default function LandingPage() {
                 <li className="flex items-center"><span className="mr-3">🏆</span> Achievement System</li>
                 <li className="flex items-center"><span className="mr-3">🗣️</span> Voice-First Learning</li>
               </ul>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+              <button
                 onClick={() => navigate('/learn')}
-                className="w-full mt-6 bg-gradient-to-r from-green-500 to-emerald-600 text-white py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300"
+                className="w-full mt-6 bg-gradient-to-r from-green-500 to-emerald-600 text-white py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-200"
               >
                 Start Learning 📚
-              </motion.button>
-            </motion.div>
+              </button>
+            </div>
 
             {/* Creator Card */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              whileHover={{ y: -10, scale: 1.02 }}
-              className="bg-gradient-to-br from-purple-50 to-violet-100 p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-purple-200"
-            >
+            <div className="bg-gradient-to-br from-purple-50 to-violet-100 p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-shadow duration-200 border border-purple-200">
               <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-violet-600 rounded-2xl flex items-center justify-center mb-6 mx-auto">
                 <span className="text-3xl">✨</span>
               </div>
@@ -321,25 +225,17 @@ export default function LandingPage() {
                 <li className="flex items-center"><span className="mr-3">🎵</span> Audio Generation</li>
                 <li className="flex items-center"><span className="mr-3">📱</span> Mobile Ready</li>
               </ul>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+              <button
                 onClick={() => navigate('/about')}
-                className="w-full mt-6 bg-gradient-to-r from-purple-500 to-violet-600 text-white py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300"
+                className="w-full mt-6 bg-gradient-to-r from-purple-500 to-violet-600 text-white py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-200"
               >
                 Learn More 💡
-              </motion.button>
-            </motion.div>
+              </button>
+            </div>
           </div>
 
           {/* Quick Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-6"
-          >
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="text-center p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl">
               <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">22+</div>
               <div className="text-gray-700 font-medium">Languages</div>
@@ -356,142 +252,123 @@ export default function LandingPage() {
               <div className="text-3xl md:text-4xl font-bold text-pink-600 mb-2">99%</div>
               <div className="text-gray-700 font-medium">Accuracy</div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Features Section */}
       <section className="py-24 bg-gradient-to-br from-purple-50 via-pink-50 to-orange-50 relative overflow-hidden">
-        {/* Background decorations */}
+        {/* Beautiful background decorations */}
         <div className="absolute inset-0">
-          {Array.from({length: 6}).map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute opacity-20"
-              style={{
-                left: `${20 + i * 15}%`,
-                top: `${10 + (i % 3) * 30}%`,
-                fontSize: `${3 + i}rem`,
-              }}
-              animate={{
-                y: [0, -30, 0],
-                rotate: [0, 360],
-                scale: [1, 1.2, 1],
-              }}
-              transition={{
-                duration: 8 + i * 2,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: i * 1,
-              }}
-            >
-              {['🎯', '🚀', '⚡', '🌟', '💡', '🎨'][i]}
-            </motion.div>
-          ))}
+          {/* Decorative shapes */}
+          <div className="absolute opacity-10 text-6xl left-[10%] top-[20%]">🌟</div>
+          <div className="absolute opacity-15 text-4xl right-[15%] top-[10%]">✨</div>
+          <div className="absolute opacity-12 text-5xl left-[5%] bottom-[25%]">💫</div>
+          <div className="absolute opacity-18 text-3xl right-[8%] bottom-[15%]">⭐</div>
+          
+          {/* Gradient blobs */}
+          <div className="absolute top-10 right-20 w-32 h-32 bg-gradient-to-br from-purple-200 to-pink-300 rounded-full opacity-20 blur-xl"></div>
+          <div className="absolute bottom-16 left-16 w-40 h-40 bg-gradient-to-br from-orange-200 to-yellow-300 rounded-full opacity-15 blur-xl"></div>
+          <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-gradient-to-br from-blue-200 to-purple-300 rounded-full opacity-25 blur-lg"></div>
+          
+          {/* Geometric patterns */}
+          <div className="absolute top-1/4 right-1/3 w-8 h-8 border-2 border-purple-300 opacity-20 rotate-45"></div>
+          <div className="absolute bottom-1/3 left-1/3 w-6 h-6 border-2 border-pink-300 opacity-25 rotate-12"></div>
+          
+          {/* Subtle grid pattern */}
+          <div className="absolute top-1/6 right-1/6 opacity-10">
+            <div className="grid grid-cols-4 gap-3">
+              {[...Array(16)].map((_, i) => (
+                <div key={i} className="w-1 h-1 bg-purple-400 rounded-full"></div>
+              ))}
+            </div>
+          </div>
         </div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
-            className="text-center mb-20"
-          >
-            <motion.div
-              animate={{ rotate: [0, 360] }}
-              transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-              className="text-6xl mb-6"
-            >
-              🌈
-            </motion.div>
+          <div className="text-center mb-20">
+            <div className="text-6xl mb-6">🌈</div>
             <h2 className="text-4xl md:text-6xl font-extrabold font-heading mb-6">
-              <span className="multilingual-text">Powerful Features</span>
+              <span className="text-blue-600">Powerful Features</span>
               <br />
               <span className="text-gray-800">for Modern Learning</span>
             </h2>
             <p className="text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
               Everything you need to create and consume 
-              <span className="text-vibrant-pink font-bold"> multilingual </span>
+              <span className="text-pink-600 font-bold"> multilingual </span>
               educational content with 
-              <span className="text-vibrant-orange font-bold"> style!</span>
+              <span className="text-orange-600 font-bold"> style!</span>
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, index) => (
-              <motion.div
+            {features.map((feature) => (
+              <div
                 key={feature.title}
-                initial={{ opacity: 0, y: 50, scale: 0.8 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ 
-                  duration: 0.8, 
-                  delay: index * 0.2,
-                  type: "spring",
-                  bounce: 0.4
-                }}
-                whileHover={{ 
-                  y: -15, 
-                  scale: 1.05,
-                  rotateY: 5,
-                }}
-                className="vibrant-card p-8 text-center group relative overflow-hidden"
+                className="bg-white p-8 text-center rounded-3xl shadow-xl hover:shadow-2xl transition-shadow duration-200 border border-gray-100"
               >
-                <motion.div
-                  className="relative z-10"
-                  whileHover={{ scale: 1.2, rotate: 10 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <div 
-                    className="w-20 h-20 mx-auto mb-6 rounded-full flex items-center justify-center text-white text-3xl font-bold"
-                    style={{
-                      background: `linear-gradient(135deg, ${feature.color}, ${feature.color}80)`,
-                      boxShadow: `0 10px 30px ${feature.color}40`,
-                    }}
-                  >
+                <div className="relative z-10">
+                  <div className={`w-20 h-20 mx-auto mb-6 rounded-full flex items-center justify-center text-white text-3xl font-bold bg-gradient-to-br ${
+                    feature.color === 'text-blue-600' ? 'from-blue-500 to-blue-600' :
+                    feature.color === 'text-green-600' ? 'from-green-500 to-green-600' :
+                    feature.color === 'text-purple-600' ? 'from-purple-500 to-purple-600' :
+                    'from-orange-500 to-orange-600'
+                  }`}>
                     <feature.icon className="h-10 w-10" />
                   </div>
-                </motion.div>
+                </div>
                 
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
                   {feature.title}
                 </h3>
                 <p className="text-gray-700 text-lg leading-relaxed">
                   {feature.description}
                 </p>
                 
-                {/* Decorative elements */}
-                <motion.div
-                  className="absolute top-4 right-4 text-2xl opacity-20"
-                  animate={{ rotate: [0, 360] }}
-                  transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-                >
-                  ✨
-                </motion.div>
-              </motion.div>
+                {/* Static decorative element */}
+                <div className="absolute top-4 right-4 text-2xl opacity-20">✨</div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* AI Pipeline Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
+      <section className="py-20 bg-gray-50 relative overflow-hidden">
+        {/* Background graphics */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* Tech-themed decorations */}
+          <div className="absolute top-10 left-20 opacity-15">
+            <div className="flex space-x-1">
+              <div className="w-3 h-3 bg-blue-400 rounded-full"></div>
+              <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+              <div className="w-3 h-3 bg-purple-400 rounded-full"></div>
+            </div>
+          </div>
+          
+          {/* Circuit-like lines */}
+          <div className="absolute top-1/4 right-1/6 w-16 h-0.5 bg-gradient-to-r from-blue-300 to-purple-300 opacity-20"></div>
+          <div className="absolute bottom-1/3 left-1/6 w-20 h-0.5 bg-gradient-to-r from-green-300 to-blue-300 opacity-25"></div>
+          
+          {/* Floating tech elements */}
+          <div className="absolute top-1/6 right-1/4 text-2xl opacity-10">🔧</div>
+          <div className="absolute bottom-1/4 left-1/5 text-3xl opacity-15">⚙️</div>
+          <div className="absolute top-1/3 left-1/4 text-2xl opacity-12">🚀</div>
+          
+          {/* Subtle gradients */}
+          <div className="absolute top-16 right-32 w-24 h-24 bg-gradient-to-br from-cyan-100 to-blue-200 rounded-full opacity-20 blur-lg"></div>
+          <div className="absolute bottom-20 left-40 w-20 h-20 bg-gradient-to-br from-purple-100 to-pink-200 rounded-full opacity-15 blur-lg"></div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold font-heading text-gray-900 mb-4">
               How It Works
             </h2>
             <p className="text-xl text-gray-600">
               Simple, powerful, intelligent workflow
             </p>
-          </motion.div>
+          </div>
 
           <div className="flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-4">
             {pipeline.map((step, index) => (
@@ -523,52 +400,49 @@ export default function LandingPage() {
 
       {/* Stats Section */}
       <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-vibrant-pink via-vibrant-purple to-vibrant-orange animate-gradient-move"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600"></div>
         <div className="absolute inset-0 bg-black/20"></div>
         
-        {/* Floating numbers animation */}
+        {/* Beautiful background patterns */}
         <div className="absolute inset-0">
-          {Array.from({length: 12}).map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute text-6xl font-bold text-white/10"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-              }}
-              animate={{
-                y: [0, -100, 0],
-                opacity: [0.1, 0.3, 0.1],
-                scale: [1, 1.5, 1],
-                rotate: [0, 180, 360],
-              }}
-              transition={{
-                duration: 15,
-                delay: i * 0.5,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            >
-              {Math.floor(Math.random() * 100)}
-            </motion.div>
-          ))}
+          {/* Geometric shapes */}
+          <div className="absolute top-10 left-10 w-16 h-16 border border-white/20 rotate-45 opacity-30"></div>
+          <div className="absolute top-20 right-20 w-12 h-12 border border-white/15 rotate-12 opacity-25"></div>
+          <div className="absolute bottom-16 left-1/4 w-8 h-8 bg-white/10 rounded-full"></div>
+          <div className="absolute bottom-24 right-1/3 w-6 h-6 bg-white/15 rounded-full"></div>
+          
+          {/* Decorative lines */}
+          <div className="absolute top-1/3 left-1/6 w-24 h-0.5 bg-white/20 rotate-45"></div>
+          <div className="absolute bottom-1/3 right-1/6 w-20 h-0.5 bg-white/25 -rotate-45"></div>
+          
+          {/* Subtle patterns */}
+          <div className="absolute top-1/4 right-1/4 opacity-20">
+            <div className="grid grid-cols-3 gap-2">
+              {[...Array(9)].map((_, i) => (
+                <div key={i} className="w-1 h-1 bg-white rounded-full"></div>
+              ))}
+            </div>
+          </div>
+          
+          {/* Large decorative elements */}
+          <div className="absolute top-16 left-1/3 text-6xl opacity-10">📊</div>
+          <div className="absolute bottom-20 right-1/4 text-5xl opacity-15">🚀</div>
+          
+          {/* Static number decorations */}
+          <div className="absolute left-[15%] top-[30%] text-4xl font-bold text-white/5">2024</div>
+          <div className="absolute right-[20%] bottom-[35%] text-3xl font-bold text-white/8">100%</div>
+          <div className="absolute left-[70%] top-[15%] text-2xl font-bold text-white/6">AI</div>
         </div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4">
               🎊 Amazing Numbers 🎊
             </h2>
             <p className="text-xl text-white/90">
               Join millions of learners transforming their futures!
             </p>
-          </motion.div>
+          </div>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (

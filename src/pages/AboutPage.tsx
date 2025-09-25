@@ -1,9 +1,9 @@
 import {
-    GlobeAltIcon,
-    HeartIcon,
-    LightBulbIcon,
-    SparklesIcon,
-    UsersIcon
+  GlobeAltIcon,
+  HeartIcon,
+  LightBulbIcon,
+  SparklesIcon,
+  UsersIcon
 } from '@heroicons/react/24/outline';
 import { motion } from 'framer-motion';
 
@@ -33,28 +33,40 @@ export default function AboutPage() {
 
   const team = [
     {
-      name: 'Priya Sharma',
-      role: 'CEO & Founder',
-      image: '👩‍💼',
-      bio: 'Passionate about democratizing education through technology.'
+      name: 'Jaideep Amrabad',
+      role: 'Team Leader',
+      image: '👨‍💼',
+      bio: 'Visionary leader driving innovation in multilingual education technology.'
     },
     {
-      name: 'Arjun Patel',
-      role: 'CTO',
+      name: 'Avinash Addanki',
+      role: 'Team Member',
       image: '👨‍💻',
-      bio: 'AI and machine learning expert with 10+ years of experience.'
+      bio: 'Software engineer passionate about creating accessible learning platforms.'
     },
     {
-      name: 'Meera Singh',
-      role: 'Head of Localization',
-      image: '👩‍🏫',
+      name: 'Teja',
+      role: 'Team Member',
+      image: '�‍🏫',
       bio: 'Linguist and cultural consultant specializing in Indian languages.'
     },
     {
-      name: 'Rajesh Kumar',
-      role: 'Product Manager',
+      name: 'Bhanu Prakash',
+      role: 'Team Member',
       image: '👨‍🎯',
-      bio: 'Product strategist focused on user experience and accessibility.'
+      bio: 'Full-stack developer with expertise in modern web technologies.'
+    },
+    {
+      name: 'Deepthi',
+      role: 'Team Member',
+      image: '👩‍💻',
+      bio: 'UI/UX designer focused on accessible and inclusive design.'
+    },
+    {
+      name: 'Pranavi',
+      role: 'Team Member',
+      image: '👩‍🔬',
+      bio: 'Data scientist specializing in AI and machine learning applications.'
     }
   ];
 
