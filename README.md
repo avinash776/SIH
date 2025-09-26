@@ -1,18 +1,19 @@
-# 🌐 SkillSetu - Bridging Skills Across Languages
+# 🌐 SIH Learning Platform - Full Stack Multilingual Learning System
 
 <div align="center">
   <img src="https://img.shields.io/badge/React-18.2.0-blue?logo=react" alt="React" />
   <img src="https://img.shields.io/badge/TypeScript-5.2.2-blue?logo=typescript" alt="TypeScript" />
-  <img src="https://img.shields.io/badge/Vite-5.0.0-purple?logo=vite" alt="Vite" />
-  <img src="https://img.shields.io/badge/Tailwind-3.3.0-cyan?logo=tailwindcss" alt="Tailwind CSS" />
-  <img src="https://img.shields.io/badge/Framer_Motion-10.16.5-pink?logo=framer" alt="Framer Motion" />
+  <img src="https://img.shields.io/badge/FastAPI-0.104.1-green?logo=fastapi" alt="FastAPI" />
+  <img src="https://img.shields.io/badge/Python-3.8+-yellow?logo=python" alt="Python" />
+  <img src="https://img.shields.io/badge/IndicTrans2-Latest-orange" alt="IndicTrans2" />
+  <img src="https://img.shields.io/badge/Whisper-Latest-purple" alt="Whisper" />
 </div>
 
 ## ✨ Overview
 
-SkillSetu is an AI-powered multilingual content localization engine for vocational courses. It allows training providers to upload learning content (text, docs, audio, video, assessments), and learners to consume it in their own language with cultural relevance, accessibility, and smooth experience.
+A comprehensive multilingual learning platform with React frontend and FastAPI backend, featuring IndicTrans2 for translation and Whisper for speech processing. Enables learners to access vocational courses in their native language with voice interaction capabilities.
 
-**Tagline**: *"Learn Any Skill. In Any Language."*
+**Features**: *Real-time translation, Speech recognition, Text-to-speech, Course management, Progress tracking*
 
 ## 🎯 Core Features
 
