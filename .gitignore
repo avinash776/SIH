@@ -8,7 +8,7 @@ lerna-debug.log*
 
 # Build outputs
 dist/
-build/
+build/  
 *.local
 
 # Environment variables
